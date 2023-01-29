@@ -1,0 +1,15 @@
+#registerSection{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+#registerCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+    min-width: 50vw;
+}
