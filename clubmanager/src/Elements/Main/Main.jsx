@@ -1,30 +1,23 @@
 import React from "react";
+// import { Calendar } from "../Calendar/Index";
 import "../Main/Main.css";
 function Main() {
-  function handleLoginClick() {
-    window.location.href = "/login";
+  function handleClick() {
+    window.location.href = "/addClub";
   }
-  function handleRegisterClick() {
-    window.location.href = "/register";
+  function handleClick2() {
+    window.location.href = "/clubs";
   }
-
   return (
     <section style={{ height: "100vh" }} id="mainSection">
       <h1>Welcome</h1>
-      <div id="btnSection">
-      <button onClick={handleLoginClick} className="mainbtn">
-        Login
-        <div class="arrow-wrapper">
-          <div class="arrow"></div>
-        </div>
+      {/* <Calendar /> */}
+      <button className="btn btn-success" onClick={handleClick}>
+        Add Club Page
       </button>
-      <button onClick={handleRegisterClick} className="mainbtn">
-        Register
-        <div class="arrow-wrapper">
-          <div class="arrow"></div>
-        </div>
+      <button className="btn btn-success my-1" onClick={handleClick2}>
+        ClubDashboard
       </button>
-      </div>
     </section>
   );
 }

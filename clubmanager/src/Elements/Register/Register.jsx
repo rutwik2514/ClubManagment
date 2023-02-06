@@ -2,7 +2,7 @@ import React from "react";
 import "../Register/Register.css";
 function Register() {
   const [open,setOpen] = React.useState(false);
-  const data  = {
+  const [data,setData] = React.useState({
     userName: "",
     email: "",
     password: "",
@@ -10,8 +10,7 @@ function Register() {
     securityKey: "",
     dropValue: "User",
     showSecurityKey: false,
-  }
-
+  })
   function handleChangeDropDown(e) {
     data.dropValue = e.target.value;
     if (e.target.value === "Admin") {
@@ -37,28 +36,44 @@ function Register() {
           <input
             type="text"
             placeholder="Email"
-            onChange={(e) => (data.email = e.target.value)}
+            onChange={(e) =>{
+              let newData= data;
+              newData.email= e.target.value;
+              setData(newData);
+            } }
           />
         </div>
         <div>
           <input
             type="text"
             placeholder="Username"
-            onChange={(e) => (data.userName = e.target.value)}
+            onChange={(e) =>{
+              let newData= data;
+              newData.userName= e.target.value;
+              setData(newData);
+            } }
           />
         </div>
         <div>
           <input
             type="password"
             placeholder="Password"
-            onChange={(e) => (data.password = e.target.value)}
+            onChange={(e) =>{
+              let newData= data;
+              newData.password= e.target.value;
+              setData(newData);
+            } }
           />
         </div>
         <div>
           <input
             type="password"
             placeholder="Confirm Password"
-            onChange={(e) => (data.confirmPassword = e.target.value)}
+            onChange={(e) =>{
+              let newData= data;
+              newData.confirmPassword= e.target.value;
+              setData(newData);
+            } }
           />
         </div>
         <div>
@@ -72,7 +87,11 @@ function Register() {
             <input
               type="text"
               placeholder="Security Key"
-              onChange={(e) => (data.securityKey = e.target.value)}
+              onChange={(e) =>{
+                let newData= data;
+                newData.securityKey= e.target.value;
+                setData(newData);
+              } }
             />
           </div>
         )}

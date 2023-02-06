@@ -1,60 +1,47 @@
 import React from "react";
-import "../Navbar/Navbar.css";
-import Icon from "../../Assets/icon.svg";
-import { useWindowSize } from "usehooks-ts";
-import Clublogo from "../../Assets/ClubManager.svg"
+import "../Navbar/Navbar.css"
 function Navbar() {
-  const [burger, setburger] = React.useState(false);
-  const [open, setopen] = React.useState(false);
-  const { width } = useWindowSize();
-  console.log(width);
-  React.useEffect(() => {
-    if (width <= 950) {
-      setburger(true);
-    }
-    if (width > 950) {
-      setburger(false);
-    }
-  }, [width]);
-
-  function handleClick() {
-    setopen(!open);
-    console.log(open);
-  }
-
   return (
     <>
-      <nav id="navbardiv" className="fixed-top">
-        <div id="logodiv">
-          {burger && <img src={Clublogo} alt="" id="glogo" />}
-          {!burger && <img src={Clublogo} alt="" id="gdsc" />}
-        </div>
-        {burger && (
-          <div className="burgerdiv">
-            <img src={Icon} alt="" onClick={handleClick} id="iconimg" />
-            {open && (
-              <div id="burgeropen">
-                <ul id="burgerinsidediv">
-                  <li className="insideli">Home</li>
-                  <li className="insideli">Register</li>
-                  <li className="insideli">Timeline</li>
-                  <li className="insideli">Guidelines</li>
-                  <li className="insideli">Rewards</li>
-                  <li className="insideli">Contact Us</li>
-                </ul>
-              </div>
-            )}
+      <nav class="navbar navbar-expand-lg bg-body-tertiary navdiv">
+        <div class="container-fluid">
+          {/* <a class="navbar-brand" href="#">Navbar</a> */}
+          <span>Navbar</span>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item mx-lg-3">
+                {/* <a class="nav-link active" aria-current="page" href="#">Home</a> */}
+                <span>Home</span>
+              </li>
+              <li class="nav-item" >
+                {/* <a class="nav-link" href="#">Link</a> */}
+                <span >Link</span>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
           </div>
-        )}
-        {!burger && (
-          <ul id="rightdiv">
-            <li id="btn-1">Home</li>
-            <li id="btn-2">Register</li>
-            <li id="btn-3">Timeline</li>
-            <li id="btn-4">Guidelines</li>
-            <li id="btn-5">Contact Us</li>
-          </ul>
-        )}
+        </div>
       </nav>
     </>
   );
